@@ -21,5 +21,7 @@ public class UserService {
                 .birthDate(request.birthDate())
                 .omId(request.omId())
                 .build();
+
+        userRepository.save(user);
     }
 }

@@ -20,7 +20,7 @@ public class User {
     private String email;
     private String password;
     private Date birthDate;
-    @Column(length = 11)
-    private short omId;
 
+    @Column(length = 11)
+    private String omId;
 }

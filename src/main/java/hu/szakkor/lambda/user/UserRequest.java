@@ -6,6 +6,6 @@ public record UserRequest(
         String email,
         String password,
         Date birthDate,
-        short omId
+        String omId
 ) {
 }
