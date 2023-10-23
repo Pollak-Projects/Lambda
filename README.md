@@ -37,29 +37,29 @@ You can run each service by executing the main application file for that service
 
 - **Authentication and User Management** (Keycloak provider)
 - **Forum Service**
-- Features:
-  - CRUD operations for Posts, Messages, and Responses
-  - Upvoting and Downvoting
-  - Sharing functionality
+  - Features:
+    - CRUD operations for Posts, Messages, and Responses
+    - Upvoting and Downvoting
+    - Sharing functionality
 - **News Service**
-- Features:
-  - CRUD operations for Posts
-  - Upvoting and Downvoting
-  - Sharing and linking capabilities
+  - Features:
+    - CRUD operations for Posts
+    - Upvoting and Downvoting
+    - Sharing and linking capabilities
 - **Quiz Service**
-- Features:
-  - CRUD operations for Tests and Questions
-  - Student management
-  - Sharing and linking
-  - Automated grading
+  - Features:
+    - CRUD operations for Tests and Questions
+    - Student management
+    - Sharing and linking
+    - Automated grading
 - **Tasks Service**
-- Features:
-  - CRUD operations for Tasks and Comments
-  - Grading functionality
+  - Features:
+    - CRUD operations for Tasks and Comments
+    - Grading functionality
 - **Messaging Service**
-- Features:
-  - CRUD operations for sending and listing messages
-  - Real-time communication via WebSocket and Socket.IO
+  - Features:
+    - CRUD operations for sending and listing messages
+    - Real-time communication via WebSocket and Socket.IO
 
 - **File Management Service** (Possible integration with Google Drive)
 - **Kreta API Integration**
