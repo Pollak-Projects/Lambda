@@ -4,4 +4,4 @@
 
 | Team Alpha                                                          | Team Omega                                                         |
 |---------------------------------------------------------------------|--------------------------------------------------------------------|
-| - Jani Patrik<br/>- Gere Csanad<br/>- Szabo Kevin<br/>- Vigh Daniel | - Barna Mate<br/>- Barta Mate<br/>- Heja Gabor<br/>- Szirony Gergo |
+| - Jani Patrik<br/>- Gere Csanad<br/>- Szabo Kevin<br/>- Vigh Daniel | - Barna Mate<br/>- Barta Mate<br/>- Heja Gabor<br/>- Szirony Gergo<br/>- Tamaskovits Gyula|
