@@ -1,7 +1,8 @@
-package hu.szakkor.forumMessage;
+package hu.szakkor.newsPost;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import hu.szakkor.forum.Forum;
+import hu.szakkor.news.News;
+import hu.szakkor.news.NewsUpvoters;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -9,6 +10,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import java.io.Serial;
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.List;
 import java.util.UUID;
 
 @Getter
@@ -18,7 +20,9 @@ import java.util.UUID;
 @AllArgsConstructor
 @Entity
 
-public class ForumMessage implements Serializable {
+@Table(name = "news")
+public class NewsPost implements Serializable {
+
     @Serial
     private static final long serialVersionUID = 1L;
 
@@ -26,13 +30,10 @@ public class ForumMessage implements Serializable {
     @GeneratedValue
     private UUID id;
 
-    private String msg;
+    private String post;
 
     @JsonIgnore
-    private UUID userID;
-
-    @Transient  // @Transistent = Csak egy lokális változó, nem lesz benne az adatbázisban
-    private String userName;
+    private UUID userId;
 
     @CreationTimestamp
     private Timestamp createdAt;
@@ -40,6 +41,9 @@ public class ForumMessage implements Serializable {
     @ManyToOne(
             cascade = CascadeType.ALL, fetch = FetchType.EAGER
     )
-    @JoinColumn(name = "forum_id")
-    private Forum forum;
+    @JoinColumn(name = "post_id")
+    private News news;
+
+    @OneToMany(mappedBy = "newsPost", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<NewsUpvoters> newsUpvoters;
 }
