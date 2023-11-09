@@ -26,6 +26,5 @@ public class Forum implements Serializable {
 
     private UUID groupID;
 
-    @OneToMany(mappedBy = "forum", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<ForumMessage> forumMessage;
+    private String forumName;
 }
