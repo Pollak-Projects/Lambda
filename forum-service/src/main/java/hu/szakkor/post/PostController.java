@@ -23,8 +23,8 @@ public class PostController {
 
     @GetMapping
     public ResponseEntity<List<Post>> findById(@RequestParam UUID id){
-        
-        final var post = postService.findById(id)
+        // todo implement error handeling if resource is not found
+        final var post = postService.findById(id);
         return ResponseEntity.ok(postService.findAll());
     }
 
@@ -44,7 +44,6 @@ public class PostController {
         .groupID(post.groupId())
         .attachments(post.attachments());
         
-        
         return ResponseEntity.ok().build();
     }
 
@@ -54,6 +53,7 @@ public class PostController {
         return ResponseEntity.notFound().build();
     }
 
+    // TODO implement deletion
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteForum(@PathVariable String uuid){
         return ResponseEntity.notFound().build();
