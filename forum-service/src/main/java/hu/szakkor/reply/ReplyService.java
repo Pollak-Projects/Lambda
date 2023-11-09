@@ -24,11 +24,9 @@ public class ReplyService {
 
 
     public void updateReply(Reply reply){
-
-        replyRepository.findById(reply.getId()).orElseThrow(()->new ResourceNotFoundException("Can't find reply by query"));
-        // TODO: 09/11/2023
-        // FIXME: 09/11/2023 i don't work
-        // TODO implement update operation
+        try {replyRepository.findById(reply.getId()).orElseThrow(()->new ResourceNotFoundException("Can't find reply by query"));}
+         catch (ResourceNotFoundException exception){return;}
+        replyRepository.save(reply);
     }
 
     public void deleteReply(Reply reply){
