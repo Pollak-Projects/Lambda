@@ -14,7 +14,7 @@ public class ForumService {
 
 
 
-    public List<Forum> findAll() {
+    public List<Forum> findForum() {
         return forumRepository.findAll();
     }
 }

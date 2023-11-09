@@ -19,11 +19,12 @@ public class ForumController {
         this.forumService = forumService;
     }
 
-    @GetMapping
-    public ResponseEntity<List<Forum>> findAll(){
-        return ResponseEntity.ok(forumService.findAll());
-    }
 
+
+    @GetMapping
+    public ResponseEntity<List<Forum>> findForum(){
+        return ResponseEntity.ok(forumService.findForum());
+    }
 
     @PostMapping
     public ResponseEntity<Void> createNewForum(@RequestBody Forum forum){
