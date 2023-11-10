@@ -22,12 +22,18 @@ public class PostController {
 
 
     @GetMapping
-    public ResponseEntity<List<Post>> findById(@RequestParam UUID id){
-        // todo implement error handeling if resource is not found
+    public ResponseEntity<Post> findById(@RequestParam UUID id){
+        // FIXME implement error handeling if resource is not found
         final var post = postService.findById(id);
-        return ResponseEntity.ok(postService.findAll());
+        return ResponseEntity.ok(post);
     }
 
+    @GetMapping
+    public ResponseEntity<List<Post>> findAll(){
+        // FIXME implement error handeling if resource is not found
+        final var post = postService.findAll();
+        return ResponseEntity.ok(post);
+    }
     @PostMapping
     public ResponseEntity<Void> createNewPost(@RequestBody PostRequest post){
         // TODO deseralize attachments
@@ -47,16 +53,18 @@ public class PostController {
         return ResponseEntity.ok().build();
     }
 
-    // TODO implement editing
     @PutMapping("/{id}")
-    public ResponseEntity<Void> updateForum(@PathVariable String uuid){
-        return ResponseEntity.notFound().build();
+    public ResponseEntity<Void> updatePost(@PathVariable UUID id, @RequestBody PostRequest post){
+        // FIXME add error handeling when user tries to edit non existent post
+        postService.update(id, post);
+
+        return ResponseEntity.ok().build();
     }
 
-    // TODO implement deletion
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteForum(@PathVariable String uuid){
-        return ResponseEntity.notFound().build();
+    public ResponseEntity<Void> deletePost(@PathVariable UUID id){ 
+        postService.delete(id);;
+        return ResponseEntity.ok().build();
     }
 
 
