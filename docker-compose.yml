@@ -15,6 +15,11 @@ services:
     hostname: keycloak
     image: quay.io/keycloak/keycloak:latest
     command: ["start-dev", "--import-realm"]
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./realms:/opt/keycloack/data/import
+    
     environment:
       KC_DB: ${DB_NAME}
       KC_DB_URL: ${DB_URL}
