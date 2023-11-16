@@ -19,13 +19,12 @@ services:
       - "8080:8080"
     volumes:
       - ./realms:/opt/keycloack/data/import
-    
     environment:
       KC_DB: ${DB_NAME}
       KC_DB_URL: ${DB_URL}
       KC_DB_USERNAME: ${DB_USERNAME}
       KC_DB_PASSWORD: ${DB_PASSWORD}
       KC_DB_SCHEMA: ${DB_SCHEMA}
-      KEYCLOACK_ADMIN: admin
-      KEYCLOACK_ADMIN_PASSWORD: admin
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
      
