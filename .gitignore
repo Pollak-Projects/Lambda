@@ -169,3 +169,7 @@ sketch
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,intellij+all,java,react,maven
+
+*.env
+*.env.production
+*.env.production
