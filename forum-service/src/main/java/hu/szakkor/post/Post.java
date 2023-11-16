@@ -17,7 +17,7 @@ import org.hibernate.annotations.CreationTimestamp;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "post", schema = "post")
+@Table(name = "post", schema = "forum")
 public class Post implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;

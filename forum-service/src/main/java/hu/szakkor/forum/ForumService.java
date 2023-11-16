@@ -13,6 +13,7 @@ import java.util.UUID;
 public class ForumService {
     private final ForumRepository forumRepository;
 
+
     public List<Forum> findAll() {
         return forumRepository.findAll();
     }

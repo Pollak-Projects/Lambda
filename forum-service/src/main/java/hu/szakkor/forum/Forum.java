@@ -1,6 +1,5 @@
 package hu.szakkor.forum;
 
-import hu.szakkor.forumMessage.ForumMessage;
 import jakarta.persistence.*;
 import lombok.*;
 
