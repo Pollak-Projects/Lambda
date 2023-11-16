@@ -1,6 +1,5 @@
 package hu.szakkor.forum;
 
-import hu.szakkor.forumMessage.ForumMessage;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -15,7 +14,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "forum", schema = "Forum")
+@Table(name = "forum", schema = "forum")
 public class Forum implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
@@ -26,6 +25,5 @@ public class Forum implements Serializable {
 
     private UUID groupID;
 
-    @OneToMany(mappedBy = "forum", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<ForumMessage> forumMessage;
+    private String forumName;
 }
