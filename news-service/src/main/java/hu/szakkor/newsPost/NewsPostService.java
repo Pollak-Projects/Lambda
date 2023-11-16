@@ -43,7 +43,7 @@ public class NewsPostService {
     public NewsPost newsPostShare(NewsPostRequest request) {
         return newsPostRepository.findById(request.id()).orElseThrow(()->new RuntimeException("No submit found under this id: " +  request.userId()));
     }
-    
+
     public void newsPostDelete(NewsPostRequest request) {
         NewsPost newsPost = newsPostRepository.findById(request.id()).orElseThrow(()->new RuntimeException("No submit found under this id: " +  request.userId()));
 
