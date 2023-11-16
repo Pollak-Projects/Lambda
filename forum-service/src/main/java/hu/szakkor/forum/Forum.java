@@ -14,7 +14,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "forum", schema = "Forum")
+@Table(name = "forum", schema = "forum")
 public class Forum implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
