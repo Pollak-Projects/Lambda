@@ -27,5 +27,5 @@ services:
       KC_DB_PASSWORD: ${DB_PASSWORD}
       KC_DB_SCHEMA: ${DB_SCHEMA}
       KEYCLOACK_ADMIN: admin
-      KEYCLOACK_ADMIN_PASSOWRD: admin
+      KEYCLOACK_ADMIN_PASSWORD: admin
      
