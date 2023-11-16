@@ -13,7 +13,7 @@ services:
   keycloak:
     container_name: keycloak
     hostname: keycloak
-    image: quay.io/keycloack/keycloak:latest
+    image: quay.io/keycloak/keycloak:latest
     command: ["start-dev", "--import-realm"]
     environment:
       KC_DB: ${DB_NAME}
