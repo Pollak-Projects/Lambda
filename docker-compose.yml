@@ -25,6 +25,7 @@ services:
       KC_DB_URL: ${DB_URL}
       KC_DB_USERNAME: ${DB_USERNAME}
       KC_DB_PASSWORD: ${DB_PASSWORD}
+      KC_DB_SCHEMA: ${DB_SCHEMA}
       KEYCLOACK_ADMIN: admin
       KEYCLOACK_ADMIN_PASSOWRD: admin
      
