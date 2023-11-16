@@ -21,25 +21,25 @@ public class PostController {
 
     @GetMapping
     public ResponseEntity<List<Post>> findAll(){
-        // FIXME implement error handeling if resource is not found
+        // FIXME implement error handling if resource is not found
         final var post = postService.findAll();
         return ResponseEntity.ok(post);
     }
 
     @GetMapping("/id")
     public ResponseEntity<Post> findById(@RequestParam UUID id){
-        // FIXME implement error handeling if resource is not found
+        // FIXME implement error handling if resource is not found
         final var post = postService.findById(id);
         return ResponseEntity.ok(post);
     }
 
     @PostMapping
     public ResponseEntity<Void> createNewPost(@RequestBody PostRequest post){
-        // TODO deseralize attachments
+        // TODO deserialize attachments
         // attachments shall be sent as a list of links.
         // since we wont host files ourselves the links
-        // from google drive shall be deseralized
-        // into our Attachement::File type
+        // from google drive shall be deserialized
+        // into our Attachment::File type
 
         Post.builder()
                 .message(post.message())
@@ -54,7 +54,7 @@ public class PostController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Void> updatePost(@PathVariable UUID id, @RequestBody PostRequest post){
-        // FIXME add error handeling when user tries to edit non existent post
+        // FIXME add error handling when user tries to edit non existent post
         postService.update(id, post);
 
         return ResponseEntity.ok().build();

@@ -19,7 +19,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "reply", schema = "Forum")
+@Table(name = "reply", schema = "forum")
 public class Reply {
 
 
