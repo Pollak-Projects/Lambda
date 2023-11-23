@@ -24,5 +24,5 @@ public class Forum implements Serializable {
 
     private UUID groupID;
 
-    private String forumName;
+    String forumName;
 }

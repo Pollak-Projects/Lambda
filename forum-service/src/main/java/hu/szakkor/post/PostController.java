@@ -10,7 +10,7 @@ import java.util.UUID;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/v1/forum/post")
+@RequestMapping("/api/v1/post")
 public class PostController {
 
     private final PostService postService;
@@ -18,48 +18,37 @@ public class PostController {
     @GetMapping
     public ResponseEntity<List<Post>> findAll() {
         // FIXME implement error handeling if resource is not found
-        final var post = postService.findAll();
-        return ResponseEntity.ok(post);
+        return ResponseEntity.ok(postService.findAll());
     }
 
     @GetMapping("/id")
     public ResponseEntity<Post> findById(@RequestParam UUID id) {
         // FIXME implement error handeling if resource is not found
-        final var post = postService.findById(id);
-        return ResponseEntity.ok(post);
+        return ResponseEntity.ok(postService.findById(id));
     }
 
     @PostMapping
-    public ResponseEntity<Void> createNewPost(@RequestBody PostRequest post) {
+    public ResponseEntity<Void> createNewPost(@RequestBody Post post) {
         // TODO deseralize attachments
         // attachments shall be sent as a list of links.
         // since we wont host files ourselves the links
         // from google drive shall be deseralized
         // into our Attachement::File type
-
-        Post.builder()
-                .message(post.message())
-                .title(post.title())
-                // TODO get user id from keycloak
-                .sentBy(UUID.fromString("e496bb41-3cd8-4928-b8de-cfd2c15b866a"))
-                .groupID(post.groupId())
-                .attachments(post.attachments());
-
+        postService.createPost(post);
         return ResponseEntity.ok().build();
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Void> updatePost(@PathVariable UUID id, @RequestBody PostRequest post) {
+    @PutMapping
+    public ResponseEntity<Void> updatePost(@RequestBody Post post) {
         // FIXME add error handeling when user tries to edit non existent post
-        postService.update(id, post);
-
+        postService.updatePost(post);
         return ResponseEntity.ok().build();
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping
     public ResponseEntity<Void> deletePost(@PathVariable UUID id) {
-        postService.delete(id);
-        ;
+        // FIXME add error handeling when user tries to edit non existent post
+        postService.deletePost(id);
         return ResponseEntity.ok().build();
     }
 

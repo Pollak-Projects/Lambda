@@ -16,31 +16,33 @@ public class ForumController {
 
     @GetMapping
     public ResponseEntity<List<Forum>> findAll() {
+        // TODO add error handeling if forums are nonexistent
         return ResponseEntity.ok(forumService.findAll());
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Forum> findById(@PathVariable UUID uuid) {
+        // TODO add error handeling if forum is nonexistent
         return ResponseEntity.ok(forumService.findByID(uuid));
     }
 
     @PostMapping
     public ResponseEntity<Void> createNewForum(@RequestBody Forum forum) {
+        forumService.createForum(forum);
+        return ResponseEntity.ok().build();
+    }
+
+    @PutMapping()
+    public ResponseEntity<Void> updateForum(@RequestBody Forum forum) {
+        // TODO add error handeling if forum is nonexistent
+        forumService.updateForum(forum);
         return ResponseEntity.notFound().build();
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Void> updateForum(@PathVariable String uuid) {
-        return ResponseEntity.notFound().build();
-    }
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteForum(@PathVariable String uuid) {
-        return ResponseEntity.notFound().build();
-    }
-
-    public ResponseEntity<Void> deleteForum(@PathVariable UUID uuid) {
-        // TODO: 11/9/2023 finish this
+    @DeleteMapping("")
+    public ResponseEntity<Void> deleteForum(@RequestBody Forum forum) {
+        // TODO add error handeling if forum is nonexistent
+        forumService.delete(forum);
         return ResponseEntity.notFound().build();
     }
 

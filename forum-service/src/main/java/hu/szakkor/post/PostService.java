@@ -12,30 +12,33 @@ public class PostService {
     private final PostRepository postRepository;
 
     public List<Post> findAll() {
+        // TODO add error handeling if nothing was found
         return postRepository.findAll();
     }
 
     public Post findById(UUID id) {
+        // TODO add error handeling if nothing was found
         final var post = postRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("No post found under this id: " + id));
         return post;
     }
 
-    public void delete(UUID post_id) {
-        postRepository.deleteById(post_id);
+    public void deletePost(UUID post_id) {
+        final var post = postRepository.findById(post_id)
+                .orElseThrow(() -> new RuntimeException("No post found under this id: " + post_id));
+        postRepository.delete(post);
     }
 
-    public void update(UUID id, PostRequest post) {
-        final var saved_post = postRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("No post found under this id: " + id));
+    public void updatePost(Post post) {
+        final var saved_post = postRepository.findById(post.getId())
+                .orElseThrow(() -> new RuntimeException("No post found under this id: " + post.getId()));
 
         // TODO better implementation of this...
-        saved_post.setMessage(post.message());
-        saved_post.setGroupID(post.groupId());
-        saved_post.setTitle(post.title());
-        saved_post.setAttachments(post.attachments());
-
         postRepository.save(saved_post);
+    }
+
+    public void createPost(Post post) {
+        postRepository.save(post);
 
     }
 
