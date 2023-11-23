@@ -16,16 +16,16 @@ public class PostController {
     private final PostService postService;
 
     @GetMapping
-    public ResponseEntity<Post> findById(@RequestParam UUID id) {
-        // FIXME implement error handeling if resource is not found
-        final var post = postService.findById(id);
-        return ResponseEntity.ok(post);
-    }
-
-    @GetMapping
     public ResponseEntity<List<Post>> findAll() {
         // FIXME implement error handeling if resource is not found
         final var post = postService.findAll();
+        return ResponseEntity.ok(post);
+    }
+
+    @GetMapping("/id")
+    public ResponseEntity<Post> findById(@RequestParam UUID id) {
+        // FIXME implement error handeling if resource is not found
+        final var post = postService.findById(id);
         return ResponseEntity.ok(post);
     }
 

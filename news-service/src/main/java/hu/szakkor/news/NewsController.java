@@ -1,10 +1,9 @@
 package hu.szakkor.news;
 
+import hu.szakkor.newsPost.NewsPostRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,4 +15,10 @@ public class NewsController {
 
     @GetMapping
     public ResponseEntity<List<News>> findAll() { return ResponseEntity.ok(newsService.findAll());}
+
+    @PostMapping("/{groupId}")
+    public ResponseEntity<Void> save(@PathVariable String groupId) {
+        newsService.NewsPostSave(groupId);
+        return ResponseEntity.ok().build();
+    }
 }
