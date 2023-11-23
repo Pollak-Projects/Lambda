@@ -19,9 +19,9 @@ public class ForumController {
         return ResponseEntity.ok(forumService.findAll());
     }
 
-    @GetMapping
-    public ResponseEntity<List<Forum>> FindAll() {
-        return ResponseEntity.ok(forumService.findAll());
+    @GetMapping("/{id}")
+    public ResponseEntity<Forum> findById(@PathVariable UUID uuid) {
+        return ResponseEntity.ok(forumService.findByID(uuid));
     }
 
     @PostMapping
