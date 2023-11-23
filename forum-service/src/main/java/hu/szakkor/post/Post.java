@@ -26,13 +26,13 @@ public class Post implements Serializable {
     @GeneratedValue
     private UUID id; // id of the post itself
 
-    private UUID groupID; // the group its published to
+    private UUID groupID; // the group it's published to
     private String message; // contents of the message
-    private UUID sentBy; // id of user that published it
+    private UUID sentBy; // id of the user that published it
     private String title; // title
     
     @CreationTimestamp
-    private Timestamp publishDate; // unix timestamp at creation
+    private Timestamp publishDate; // unix timestamp at time of creation
     
     private List<Attachment> attachments; // list of attachments, either link or file
 
