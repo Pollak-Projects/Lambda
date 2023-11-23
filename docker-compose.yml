@@ -18,7 +18,7 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - ./realms:/opt/keycloack/data/import
+      - ./realms:/opt/keycloak/data/import
     environment:
       KC_DB: ${DB_NAME}
       KC_DB_URL: ${DB_URL}
@@ -27,4 +27,5 @@ services:
       KC_DB_SCHEMA: ${DB_SCHEMA}
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_HTTP_ENABLED: true
      

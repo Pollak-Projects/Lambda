@@ -3,8 +3,6 @@ package hu.szakkor.post;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import jakarta.persistence.Persistence;
-
 import java.util.List;
 import java.util.UUID;
 
@@ -17,10 +15,9 @@ public class PostService {
         return postRepository.findAll();
     }
 
-    public Post findById(UUID id){
-        final var post = postRepository.findById(id).orElseThrow(() ->
-            new RuntimeException("No post found under this id: " + id )
-        );
+    public Post findById(UUID id) {
+        final var post = postRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("No post found under this id: " + id));
         return post;
     }
 
@@ -28,11 +25,10 @@ public class PostService {
         postRepository.deleteById(post_id);
     }
 
-    public void update(UUID id, PostRequest post){
-        final var saved_post = postRepository.findById(id).orElseThrow(() ->
-            new RuntimeException("No post found under this id: " + id )
-        );
-        
+    public void update(UUID id, PostRequest post) {
+        final var saved_post = postRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("No post found under this id: " + id));
+
         // TODO better implementation of this...
         saved_post.setMessage(post.message());
         saved_post.setGroupID(post.groupId());
@@ -41,11 +37,6 @@ public class PostService {
 
         postRepository.save(saved_post);
 
-
     }
 
-
-    
-
 }
-

@@ -11,15 +11,16 @@ import java.util.List;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/api/v1/forum/post/reply")
-public class ReplyController extends Reply{
+public class ReplyController extends Reply {
 
     private final ReplyService replyService;
 
-    public ResponseEntity<Void> replySent(@RequestBody Reply reply){
+    public ResponseEntity<Void> replySent(@RequestBody Reply reply) {
         replyService.createReply(reply);
         return ResponseEntity.ok().build();
     }
-    public ResponseEntity<List<Reply>> replyFind(){
+
+    public ResponseEntity<List<Reply>> replyFind() {
         return ResponseEntity.ok(replyService.findReply());
     }
 
