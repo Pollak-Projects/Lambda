@@ -20,6 +20,12 @@ public class SecurityConfig {
         http
                 .csrf(ServerHttpSecurity.CsrfSpec::disable)
                 .authorizeExchange(authorizeExchangeSpec -> authorizeExchangeSpec
+                        .pathMatchers("GET", "/swagger-ui.html").permitAll()
+                        .pathMatchers("GET", "/swagger-resources/**").permitAll()
+                        .pathMatchers("GET", "/v3/api-docs/**").permitAll()
+                        .pathMatchers("GET", "/webjars/**").permitAll()
+                        .pathMatchers("GET", "/api/v1/form/v3/api-docs/**").permitAll()
+                        .pathMatchers("GET", "/api/v1/quiz/v3/api-docs/**").permitAll()
                         .anyExchange().authenticated())
                 .oauth2ResourceServer(oAuth2ResourceServerSpec -> oAuth2ResourceServerSpec
                         .jwt(jwtSpec -> jwtSpec
