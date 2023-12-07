@@ -24,7 +24,7 @@ public class SecurityConfig {
                         .pathMatchers("GET", "/swagger-resources/**").permitAll()
                         .pathMatchers("GET", "/v3/api-docs/**").permitAll()
                         .pathMatchers("GET", "/webjars/**").permitAll()
-                        .pathMatchers("GET", "/api/v1/form/v3/api-docs/**").permitAll()
+                        .pathMatchers("GET", "/api/v1/forum/v3/api-docs/**").permitAll()
                         .pathMatchers("GET", "/api/v1/quiz/v3/api-docs/**").permitAll()
                         .anyExchange().authenticated())
                 .oauth2ResourceServer(oAuth2ResourceServerSpec -> oAuth2ResourceServerSpec
@@ -38,3 +38,4 @@ public class SecurityConfig {
         return jwt -> Mono.justOrEmpty(jwtConverter.convert(jwt));
     }
 }
+
