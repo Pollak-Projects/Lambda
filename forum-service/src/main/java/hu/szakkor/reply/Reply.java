@@ -1,20 +1,18 @@
 package hu.szakkor.reply;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;;
 
-import java.sql.Timestamp;
+import java.security.Timestamp;
 import java.util.UUID;
+
+import org.hibernate.annotations.CreationTimestamp;
 
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Entity
 @Table(name = "reply", schema = "Forum")
 public class Reply {

@@ -3,6 +3,7 @@ package hu.szakkor.forum;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import jakarta.ws.rs.QueryParam;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;
@@ -20,8 +21,8 @@ public class ForumController {
         return ResponseEntity.ok(forumService.findAll());
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Forum> findById(@PathVariable UUID uuid) {
+    @GetMapping("/")
+    public ResponseEntity<Forum> findById(@RequestParam("id") UUID uuid) {
         // TODO add error handeling if forum is nonexistent
         return ResponseEntity.ok(forumService.findByID(uuid));
     }
@@ -32,18 +33,17 @@ public class ForumController {
         return ResponseEntity.ok().build();
     }
 
-    @PutMapping()
+    @PutMapping
     public ResponseEntity<Void> updateForum(@RequestBody Forum forum) {
         // TODO add error handeling if forum is nonexistent
         forumService.updateForum(forum);
-        return ResponseEntity.notFound().build();
+        return ResponseEntity.ok().build();
     }
 
-    @DeleteMapping("")
-    public ResponseEntity<Void> deleteForum(@RequestBody Forum forum) {
-        // TODO add error handeling if forum is nonexistent
-        forumService.delete(forum);
-        return ResponseEntity.notFound().build();
+    @DeleteMapping
+    public ResponseEntity<Void> deleteForum(@RequestParam("id") UUID id) {
+        forumService.delete(id);
+        return ResponseEntity.ok().build();
     }
 
 }

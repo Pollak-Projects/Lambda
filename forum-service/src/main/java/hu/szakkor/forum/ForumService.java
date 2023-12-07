@@ -1,7 +1,6 @@
 package hu.szakkor.forum;
 
 import hu.szakkor.exception.ResourceNotFoundException;
-import hu.szakkor.post.PostRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +23,7 @@ public class ForumService {
     public void updateForum(Forum forum_data) {
         final var forum = forumRepository.findById(forum_data.getId())
                 .orElseThrow(() -> new RuntimeException("No forum under this id: " + forum_data.getId()));
+        // TODO doesn't seem to replace record? At least from postman requests
         forumRepository.save(forum);
     }
 
@@ -32,8 +32,8 @@ public class ForumService {
                 () -> new ResourceNotFoundException("Cant find anything with this id"));
     }
 
-    public void delete(Forum forum_data) {
-        final var forum = forumRepository.findById(forum_data.getId()).orElseThrow(
+    public void delete(UUID id) {
+        final var forum = forumRepository.findById(id).orElseThrow(
                 () -> new ResourceNotFoundException("Cant find anything with this id"));
         forumRepository.delete(forum);
     }

@@ -2,13 +2,9 @@
 package hu.szakkor.post;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.net.http.HttpResponse;
-import java.security.Timestamp;
 import java.util.List;
 import java.util.UUID;
 
@@ -25,8 +21,8 @@ public class PostController {
         return ResponseEntity.ok(postService.findAll());
     }
 
-    @GetMapping("/id")
-    public ResponseEntity<Post> findById(@RequestParam UUID id) {
+    @GetMapping("/q")
+    public ResponseEntity<Post> findById(@RequestParam("id") UUID id) {
         // FIXME implement error handeling if resource is not found
         return ResponseEntity.ok(postService.findById(id));
     }
