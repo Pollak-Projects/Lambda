@@ -21,7 +21,7 @@ public class ForumController {
         return ResponseEntity.ok(forumService.findAll());
     }
 
-    @GetMapping("/")
+    @GetMapping("/q")
     public ResponseEntity<Forum> findById(@RequestParam("id") UUID uuid) {
         // TODO add error handeling if forum is nonexistent
         return ResponseEntity.ok(forumService.findByID(uuid));

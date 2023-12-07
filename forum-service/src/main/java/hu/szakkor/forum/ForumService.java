@@ -21,10 +21,9 @@ public class ForumService {
     }
 
     public void updateForum(Forum forum_data) {
-        final var forum = forumRepository.findById(forum_data.getId())
+        forumRepository.findById(forum_data.getId())
                 .orElseThrow(() -> new RuntimeException("No forum under this id: " + forum_data.getId()));
-        // TODO doesn't seem to replace record? At least from postman requests
-        forumRepository.save(forum);
+        forumRepository.save(forum_data);
     }
 
     public Forum findByID(UUID uuid) {
