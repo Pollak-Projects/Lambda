@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.io.Serial;
 import java.util.UUID;
 
 @Getter
@@ -13,8 +12,8 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "correct_answers")
-public class CorresctAnswers {
+@Table(name = "correct_answers", schema = "multiple_choice")
+public class CorrectAnswers {
     @Id
     @GeneratedValue
     private UUID id;

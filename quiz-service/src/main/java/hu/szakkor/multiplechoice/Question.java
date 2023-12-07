@@ -6,7 +6,6 @@ import lombok.*;
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.List;
-import java.util.Set;
 import java.util.UUID;
 
 @Getter
@@ -15,7 +14,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "questions")
+@Table(name = "questions", schema = "multiple_choice")
 public class Question implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
@@ -30,5 +29,5 @@ public class Question implements Serializable {
     private List<Answers> answers;
 
     @OneToMany(mappedBy = "correctAnswer",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<CorresctAnswers> correctAnswers;
+    private List<CorrectAnswers> correctAnswers;
 }

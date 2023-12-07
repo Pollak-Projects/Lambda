@@ -13,7 +13,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "answers")
+@Table(name = "answers", schema = "multiple_choice")
 public class Answers {
     @Id
     @GeneratedValue
