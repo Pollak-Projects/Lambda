@@ -26,8 +26,8 @@ public class ReplyController extends Reply {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Reply> findById(@PathVariable UUID id) {
-        return ResponseEntity.ok(replyService.findById(id));
+    public ResponseEntity<Reply> findById(@PathVariable UUID uuid) {
+        return ResponseEntity.ok(replyService.findById(uuid));
     }
 
     @PostMapping
