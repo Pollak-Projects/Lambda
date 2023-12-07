@@ -21,20 +21,20 @@ public class EssayService {
         return essayRepository.findAll();
     }
 
-    public Essay findById(UUID uuid) {
-        final var essay = essayRepository.findById(uuid).orElseThrow(
+    public Essay findById(UUID id) {
+        final var essay = essayRepository.findById(id).orElseThrow(
                 () -> new ResourceNotFoundException("Cant find anything with this id"));
         return essay;
     }
 
     public void updateEssay(Essay essay_data) {
-        final var essay = essayRepository.findById(essay_data.getUuid()).orElseThrow(
+        final var essay = essayRepository.findById(essay_data.getId()).orElseThrow(
                 () -> new ResourceNotFoundException("Cant find anything with this id"));
         essayRepository.save(essay);
     }
 
     public void deleteEssay(Essay essay_data) {
-        final var essay = essayRepository.findById(essay_data.getUuid()).orElseThrow(
+        final var essay = essayRepository.findById(essay_data.getId()).orElseThrow(
                 () -> new ResourceNotFoundException("Cant find anything with this id"));
         essayRepository.delete(essay);
     }

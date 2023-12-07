@@ -20,8 +20,8 @@ public class EssayController extends Essay{
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Essay> findById(@PathVariable UUID uuid){
-        return ResponseEntity.ok(essayService.findById(uuid));
+    public ResponseEntity<Essay> findById(@PathVariable UUID id){
+        return ResponseEntity.ok(essayService.findById(id));
     }
 
     @PutMapping

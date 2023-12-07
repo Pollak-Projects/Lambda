@@ -17,7 +17,7 @@ import java.util.UUID;
 public class Essay {
     @Id
     @Generated
-    private UUID uuid;
+    private UUID id;
 
     private String content;
 
