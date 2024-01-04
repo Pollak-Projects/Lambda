@@ -3,12 +3,7 @@ package hu.szakkor.onepick;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.security.Timestamp;
 import java.util.UUID;
-
-import org.hibernate.annotations.CreationTimestamp;
-
-import lombok.*;
 
 @Getter
 @Setter
@@ -17,6 +12,17 @@ import lombok.*;
 @AllArgsConstructor
 @Entity
 @Table(name = "onepick", schema = "Quiz")
-public class Onepick {
+public class OnepickAnswer {
+    @ManyToOne
+    @Id
+    @GeneratedValue
+    private UUID id;
 
+    private String answer;
+
+    private boolean correct;
+
+    OnepickQuestion ques;
 }
+
+
