@@ -23,6 +23,6 @@ public class PairTwo {
     private String pairOne;
 
     @JsonIgnore
-    @ManyToMany(mappedBy = "pairTwo" ,cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Set<PairOne> pairTwoSet;
+    @ManyToMany(mappedBy = "pairTwoSet",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Set<PairOne> pairOneSet;
 }

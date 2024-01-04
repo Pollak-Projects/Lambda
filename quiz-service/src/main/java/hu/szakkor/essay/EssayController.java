@@ -24,7 +24,7 @@ public class EssayController extends Essay{
         return ResponseEntity.ok(essayService.findById(id));
     }
 
-    @PutMapping
+    @PostMapping
     public ResponseEntity<Void> create(@RequestBody Essay essay){
         essayService.createEssay(essay);
         return ResponseEntity.ok().build();
