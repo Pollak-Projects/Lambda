@@ -17,13 +17,13 @@ public class ForumController {
 
     @GetMapping
     public ResponseEntity<List<Forum>> findAll() {
-        // TODO add error handeling if forums are nonexistent
+        // TODO add error handling if forums are nonexistent
         return ResponseEntity.ok(forumService.findAll());
     }
 
     @GetMapping("/q")
     public ResponseEntity<Forum> findById(@RequestParam("id") UUID uuid) {
-        // TODO add error handeling if forum is nonexistent
+        // TODO add error handling if forum is nonexistent
         return ResponseEntity.ok(forumService.findByID(uuid));
     }
 
@@ -35,7 +35,7 @@ public class ForumController {
 
     @PutMapping
     public ResponseEntity<Void> updateForum(@RequestBody Forum forum) {
-        // TODO add error handeling if forum is nonexistent
+        // TODO add error handling if forum is nonexistent
         forumService.updateForum(forum);
         return ResponseEntity.ok().build();
     }
