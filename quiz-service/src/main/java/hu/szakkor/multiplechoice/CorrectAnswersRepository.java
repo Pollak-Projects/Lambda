@@ -4,5 +4,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;
 
-public interface MultipleRepository extends JpaRepository<Question, UUID> {
+public interface CorrectAnswersRepository extends JpaRepository<CorrectAnswers, UUID> {
 }
