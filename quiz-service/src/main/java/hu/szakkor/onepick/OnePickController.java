@@ -34,7 +34,7 @@ public class OnePickController {
 
     @PutMapping
     public ResponseEntity<Void> update(@RequestBody OnepickQuestion OnePick){
-        onePickService.updateOnePickQuestion(OnePick);
+        onePickService.updateOnepickQuestion(OnePick);
         return ResponseEntity.ok().build();
     }
 }
