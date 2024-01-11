@@ -1,0 +1,51 @@
+## A kulombozo lapok
+
+- welcome page
+- grid, az osszes csoportnak, mint a google classroom
+- csoport view
+  - hirek
+    - postok (likeable)
+  - forumok (tobb forum egy tantargyon belul, a tanar tudja generalni)
+    - postok
+      - commentek (likeable)
+        - replyok 
+  - quizek
+  - feladatok (tanar tudja generalni, leadni, pontozni)
+  - dokumentumok (tanar tud: feltolni, letolteni, torolni, modositani, diak: letolteni)
+    - kategorizalni:
+      - tag-ek alapjan
+      - datum alapjan
+      - nev alapjan
+    - tag-ek
+    - filterek
+    - kereses
+  - tagok 
+    - uzenetkuldes (MEG NEM KELL)
+    - profil megtekintese
+- profile view
+  - profile picture 
+  - username
+  - password
+- beallitasok
+  - email notification
+  - theme
+    - tobb fajta, (css valtozokkal)
+- dasboard
+  - notification
+  - assignments
+  - naptar
+  - szamonkeres
+  - task priority list
+- admin panel
+  - csoportot
+    - torolni
+    - modositani
+    - letrehozni
+  - logok
+    - mindenrol, ki, mit, hova, mindent logolni
+  - felhasznalok
+    - torolni
+    - modositani
+  - forumok
+    - archivalni
+    - modositani
