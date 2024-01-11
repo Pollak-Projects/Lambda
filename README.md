@@ -7,6 +7,8 @@ This document provides an overview of the Lambda educational system, outlining i
 - **Backend**: [Spring Framework](https://spring.io/) (SpringBoot, SpringCloud)
 - **Authentication**: [Keycloak](https://www.keycloak.org/)
 - **Frontend**: [React](https://react.dev/)
+- **Frontend Store**: [Redux](https://redux.js.org/)
+- **Frontend ApiSlice**: [RTK](https://redux-toolkit.js.org/rtk-query/overview)
 
 For guidance on using Git with this project, please refer to [GIT MD](GITHUB_SEGED.md).
 
