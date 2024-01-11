@@ -2,7 +2,7 @@
 
 - welcome page
 - grid, az osszes csoportnak, mint a google classroom
-- csoport view
+- csoport view page
   - hirek
     - postok (likeable)
   - forumok (tobb forum egy tantargyon belul, a tanar tudja generalni)
@@ -22,21 +22,21 @@
   - tagok 
     - uzenetkuldes (MEG NEM KELL)
     - profil megtekintese
-- profile view
+- profile view page
   - profile picture 
   - username
   - password
-- beallitasok
+- beallitasok page
   - email notification
   - theme
     - tobb fajta, (css valtozokkal)
-- dasboard
+- dasboard page
   - notification
   - assignments
   - naptar
   - szamonkeres
   - task priority list
-- admin panel
+- admin panel page
   - csoportot
     - torolni
     - modositani
