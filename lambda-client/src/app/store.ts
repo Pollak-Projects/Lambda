@@ -1,7 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-import thunk from "redux-thunk";
 import { apiSlice } from "./api/apiSlice";
 import authReducer from "../features/authSlice";
 
@@ -17,12 +16,18 @@ export const store = configureStore({
         [apiSlice.reducerPath]: apiSlice.reducer,
         auth: persistedReducer,
     },
+    // Changed the code right here, maybe it works
+    // IT DOES YAY
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
             serializableCheck: false,
+            thunk: {
+                extraArgument: {
+                    api: apiSlice,
+                },
+            },
         })
-            .concat(apiSlice.middleware)
-            .concat(thunk),
+            .concat(apiSlice.middleware),
     devTools: true,
 });
 

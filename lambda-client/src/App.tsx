@@ -6,6 +6,7 @@ import React from 'react';
 
 function App() {
   const homePage = lazy(() => import("./pages/Home"));
+  const settingsPage = lazy(() => import("./pages/Settings.tsx"));
 
   const lazyElement = (
     Component: React.LazyExoticComponent<() => JSX.Element>
@@ -27,10 +28,14 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route
-            path="Home"
+            path="home"
             element={lazyElement(homePage)}
         >
-          
+        </Route>
+        <Route
+            path="settings"
+            element={lazyElement(settingsPage)}
+        >
         </Route>
       </Routes>
     </BrowserRouter>
