@@ -2,10 +2,10 @@ import React from "react";
 import {ChakraProvider} from "@chakra-ui/react";
 import {chakraCustomTheme} from "./chackra-ui.theme.ts";
 
-export const ChackraUiProvider = ({
-    children
-} : {
+interface ChackraUiProviderProps {
     children: React.ReactNode
-}) => {
-    return <ChakraProvider theme={chakraCustomTheme}>{children}</ChakraProvider>
+}
+
+export const ChackraUiProvider = (props :ChackraUiProviderProps) => {
+    return <ChakraProvider theme={chakraCustomTheme}>{props.children}</ChakraProvider>
 }
