@@ -3,6 +3,7 @@ import { Route } from "react-router";
 import { BrowserRouter, Routes } from "react-router-dom";
 import './App.css'
 import React from 'react';
+import Default from './layouts/Default.tsx';
 
 function App() {
   const homePage = lazy(() => import("./pages/Home"));
@@ -10,32 +11,34 @@ function App() {
 
   const lazyElement = (
     Component: React.LazyExoticComponent<() => JSX.Element>
-) => {
+  ) => {
     return (
-        <React.Suspense
-            fallback={
-                <div className="loading">
-                    Loading...
-                </div>
-            }
-        >
-            <Component />
-        </React.Suspense>
+      <React.Suspense
+        fallback={
+          <div className="loading">
+            Loading...
+          </div>
+        }
+      >
+        <Component />
+      </React.Suspense>
     );
-};
+  };
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route
+        <Route element={<Default />}>
+          <Route
             path="home"
             element={lazyElement(homePage)}
-        >
-        </Route>
-        <Route
+          >
+          </Route>
+          <Route
             path="settings"
             element={lazyElement(settingsPage)}
-        >
+          >
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>
