@@ -4,11 +4,11 @@ export const ColorModeToggler = () => {
     const {colorMode, toggleColorMode} = useColorMode();
 
     return (
-            <FormControl display='flex' alignItems='center'>
-                <FormLabel htmlFor='dark-mode' mb='0'>
-                    Enable {colorMode === "light" ? "Dark" : "Light"}
-                </FormLabel>
-                <Switch id='dark-mode' onClick={toggleColorMode}/>
-            </FormControl>
+        <FormControl alignItems='center' display='flex'>
+            <FormLabel htmlFor='dark-mode' mb='0'>
+                Toggle light mode
+            </FormLabel>
+            <Switch id='dark-mode' onChange={toggleColorMode} defaultChecked={colorMode == "light"}/>
+        </FormControl>
     );
 }
