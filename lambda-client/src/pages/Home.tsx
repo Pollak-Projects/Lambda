@@ -1,7 +1,4 @@
 function Home() {
-
-    
-
     return (
         <>
             <p>Home</p>
