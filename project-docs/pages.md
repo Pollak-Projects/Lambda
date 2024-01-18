@@ -28,7 +28,7 @@
   - password
 - beallitasok page
   - email notification
-  - theme
+  - chackraUiTheme
     - tobb fajta, (css valtozokkal)
 - dasboard page
   - notification
