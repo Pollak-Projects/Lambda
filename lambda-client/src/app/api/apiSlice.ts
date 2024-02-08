@@ -6,7 +6,7 @@ import {
 //import keycloak from "../../types/Keycloak";
 
 const baseQuery = fetchBaseQuery({
-    baseUrl: "",
+    baseUrl: process.env.APP_API_URL,
     credentials: "include",
     prepareHeaders: (headers) => {
         //const token = keycloak.token;

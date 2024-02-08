@@ -16,6 +16,7 @@
     "@react-keycloak/web": "^3.4.0",
     "@reduxjs/toolkit": "^2.0.1",
     "@types/react-redux": "^7.1.33",
+    "axios": "^1.6.7",
     "framer-motion": "^10.18.0",
     "keycloak-js": "^23.0.4",
     "react": "^18.2.0",
@@ -29,6 +30,7 @@
     "sass": "^1.70.0"
   },
   "devDependencies": {
+    "@types/node": "^20.11.16",
     "@types/react": "^18.2.47",
     "@types/react-color": "^3.0.11",
     "@types/react-dom": "^18.2.17",
