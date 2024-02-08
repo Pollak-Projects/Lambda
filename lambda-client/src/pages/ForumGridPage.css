@@ -1,24 +1,36 @@
 /*css stuff*/
 .column_middle {
     float: left;
-    width: 60%;
-    padding: 2em;
-    background-color: #bbb; 
+    width: 85vw;
+    height: 90vh;
+    background-color: grey;
 
-    
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 2em;
+
+
+
+
 
     /*this fucking bitch*/
     place-items: center;
+    overflow: scroll;
 
   }
   .gridElements{
-    height: 10em;
-    width: 10em;
-    margin: 0 none;
+    height: 30em;
+    width: 30em;
+    margin: 2em 2em ;
     text-align: center;
     border: #000000 1px solid;
-    position: relative;
+      border-radius: 10%;
+
+  }
+  .leftNav li{
+      float: left;
+      display: inline;
+      padding-right: 1em;
+  }
+  .rightNav li{
+      float: right;
+      display: inline;
+      padding-left: 1em;
   }
